@@ -117,11 +117,13 @@ class Centralized(DecisionModel):
     
     def summary(self):
         return {
-            "P1*": self.optimal_retailer(),
-            "P2*": self.optimal_supplier(),
-            "v*": self.optimal_v(),
-            "profit*": self.optimal_profit()
+            "P1*:": self.optimal_retailer(),
+            "P2*:": self.optimal_supplier(),
+            "v*:": self.optimal_v(),
+            "profit*:": self.optimal_profit()
         }
 
 model = Centralized()
-print(model.summary())
+stats = model.summary()
+for item in stats:
+    print(item, stats[item])
